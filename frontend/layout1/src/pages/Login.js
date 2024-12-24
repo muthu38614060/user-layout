@@ -35,8 +35,6 @@ function Login({ setIsAuthenticated }) {
         });
 
         const data = await response.json();
-        console.log("Response:", response);
-        console.log("Data:", data);
 
         if (response.ok) {
           localStorage.setItem("token", data.token);
