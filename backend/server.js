@@ -34,9 +34,7 @@ app.post('/register', async (req, res) => {
   }
 
   const existingUser = await User.findOne({ email });
-  console.log('====================================');
-  console.log(existingUser);
-  console.log('====================================');
+ 
   if (existingUser) {
     return res.status(400).json({ message: 'User already exists' });
   }
@@ -62,9 +60,7 @@ app.post('/login', async (req, res) => {
   console.log('Received login request:', email, password);
 
   const user = await User.findOne({ email });
-  console.log('====================================');
-  console.log(user);
-  console.log('====================================');
+ 
   if (!user) {
     return res.status(400).json({ message: 'Invalid credentials' });
   }
